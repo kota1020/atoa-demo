@@ -34,15 +34,39 @@ tell application "System Events"
 end tell
 return appName & linefeed & winTitle`;
 
+/** Browsers that hide AXTitle but answer the Chromium AppleScript dictionary (Dia does this). */
+const CHROMIUM_BROWSERS = new Set([
+  "Dia", "Google Chrome", "Chromium", "Arc", "Brave Browser", "Microsoft Edge", "Vivaldi", "Opera",
+]);
+
+async function browserTabTitle(app: string): Promise<string> {
+  const expr = app === "Safari"
+    ? `tell application "Safari" to get name of front document`
+    : `tell application "${app}" to get title of active tab of front window`;
+  try {
+    const { stdout } = await run("osascript", ["-e", expr], { timeout: 10_000 });
+    return stdout.trim();
+  } catch {
+    return "";
+  }
+}
+
 /** Frontmost app + window title. Title may be "" without Accessibility permission. */
 export async function frontmost(): Promise<Foreground> {
+  let app = "unknown";
+  let title = "";
   try {
     const { stdout } = await run("osascript", ["-e", FRONTMOST_SCRIPT], { timeout: 10_000 });
-    const [app = "unknown", ...rest] = stdout.trimEnd().split("\n");
-    return { app: app.trim(), title: rest.join(" ").trim() };
+    const [first = "unknown", ...rest] = stdout.trimEnd().split("\n");
+    app = first.trim();
+    title = rest.join(" ").trim();
   } catch {
-    return { app: "unknown", title: "" };
+    return { app, title };
   }
+  if (!title && (CHROMIUM_BROWSERS.has(app) || app === "Safari")) {
+    title = await browserTabTitle(app);
+  }
+  return { app, title };
 }
 
 /**
