@@ -5,6 +5,7 @@ import { runScan } from "./commands/scan.js";
 import { runServe } from "./commands/serve.js";
 import { runInit } from "./commands/init.js";
 import { runPush } from "./commands/push.js";
+import { runWatch } from "./commands/watch.js";
 
 const program = new Command();
 
@@ -44,6 +45,22 @@ program
       await runPush(dir, opts);
     } catch (e) {
       process.stderr.write(pc.red(`${(e as Error).message}\n`));
+      process.exit(1);
+    }
+  });
+
+program
+  .command("watch")
+  .description("Learn how you actually work — periodic screenshot → on-device OCR → local log only")
+  .option("--interval <seconds>", "seconds between captures", "60")
+  .option("--once", "capture a single sample and exit (for testing)")
+  .option("--report", "print the aggregated screen-activity report and exit")
+  .option("--days <n>", "aggregation window for --report", "7")
+  .action(async (opts: { interval?: string; once?: boolean; report?: boolean; days?: string }) => {
+    try {
+      await runWatch(opts);
+    } catch (e) {
+      process.stderr.write(pc.red(`watch failed: ${(e as Error).message}\n`));
       process.exit(1);
     }
   });

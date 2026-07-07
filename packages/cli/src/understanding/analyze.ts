@@ -3,6 +3,7 @@ import { join } from "node:path";
 import type { CategoryScore, Understanding } from "../types.js";
 import { scan } from "./scanner.js";
 import { analyzeGit } from "./git.js";
+import { aggregate as aggregateScreen } from "../watch/log.js";
 
 const clamp = (n: number) => Math.max(0, Math.min(100, Math.round(n)));
 
@@ -23,6 +24,7 @@ function hasBackgroundSignal(root: string): boolean {
 export function buildUnderstanding(root: string): Understanding {
   const { scope, extCounts, projects, files } = scan(root);
   const work = analyzeGit(root);
+  const screen = aggregateScreen(7);
 
   // top 15 languages
   const languages: Record<string, number> = {};
@@ -66,6 +68,20 @@ export function buildUnderstanding(root: string): Understanding {
       else ev.push(`Freeform commit messages (avg ${work.avgSubjectLength} chars)`);
     } else {
       ev.push("No git history in this scope — habit signals unavailable");
+    }
+    if (screen && screen.samples >= 10) {
+      // Screen activity sees the work git can't: mail, design, sales, research.
+      score += Math.min(20, Math.log10(screen.samples) * 8);
+      const top = screen.topApps[0];
+      ev.push(
+        `Screen activity: ${screen.samples} samples over ${screen.days} day(s)` +
+        (top ? ` — mostly in ${top.name} (${Math.round(top.share * 100)}%)` : ""),
+      );
+      if (screen.peakHours.length) {
+        ev.push(`Most active on screen around ${screen.peakHours.map((h) => `${String(h).padStart(2, "0")}:00`).join(", ")}`);
+      }
+    } else {
+      ev.push("Run `atoa watch` to learn work habits beyond git (aggregates only)");
     }
     categories.push({ key: "how_you_work", label: "How you work & decide", score: clamp(score), evidence: ev });
   }
@@ -115,6 +131,7 @@ export function buildUnderstanding(root: string): Understanding {
     languages,
     projects,
     workStyle: work,
+    screen,
     categories,
     overall,
   };

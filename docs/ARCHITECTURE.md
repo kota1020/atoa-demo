@@ -27,6 +27,7 @@
 2. **MCPが共通の口。** ソースを増やす＝MCPを1個増やす。AtoA本体はMCPホスト（Claude Codeと同じ構造）。
 3. **理解は3層で深まる。**
    - 層1: `atoa scan` — ローカルの構造的理解（言語・プロジェクト・git習慣）→ 即日動く、認証不要
+   - 層1.5: `atoa watch` — 画面認識。定期スクショ→**オンデバイスOCR（Apple Vision）**→テキストだけローカルJSONLへ。コード以外の仕事（営業・メール・デザイン）が how_you_work の実データになる
    - 層2: クラウドSaaS（Gmail/Slack/Notion/GitHub/Calendar/LINE/Stripe）— OAuthでMCP接続、顧客・コミュニケーションの理解
    - 層3: 会話フィードバック — AI社員とのやりとり自体が理解を更新する（訂正・好み・判断基準）
 4. **append-only スナップショット。** 理解は上書きせず積む。「先週より+12%理解した」が UI の核になる。
@@ -57,6 +58,24 @@ atoa push --to https://ai-employee-seven.vercel.app --token <ingest token>
 - dev: `FileStore`（`.data/*.json`）
 - prod: `SupabaseStore`（`SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` を設定すると自動で切替）
 - ingest保護: `ATOA_INGEST_TOKEN`（v1は共有シークレット。マルチテナント化で `ingest_tokens` テーブル照合に差し替え）
+
+## 画面認識（層1.5 = `atoa watch`）の設計
+
+```
+atoa watch                 # 60秒ごと（--interval で変更）
+  1. osascript でフロントアプリ+ウィンドウタイトル取得
+  2. 除外判定（1Password等・private/シークレット等のタイトル）→ 該当なら撮らない
+  3. screencapture でメイン画面をPNGに（要: 画面収録権限）
+  4. ~/.atoa/bin/atoa-ocr（Vision, 初回にswiftcで自動コンパイル）でオンデバイスOCR
+  5. スクショ即削除。テキストは ~/.atoa/watch/YYYY-MM-DD.jsonl に追記（PCから出ない）
+  6. 直前と同一画面（数字除去ハッシュ）ならスキップ
+
+atoa watch --report        # 直近7日の集計（サンプル数・トップアプリ・ピーク時間）
+atoa scan                  # 集計値だけが digest.screen としてダイジェストに合流
+```
+
+- **クラウドへ渡るのは集計のみ**（アプリ別シェア・時間帯・サンプル数）。OCR生テキスト・ウィンドウタイトルは渡さない。
+- 生テキストのローカル蓄積は、将来 `atoa serve` の検索対象（層2.5的なQ&A）に使える。
 
 ## 深い理解（層2・層3）の設計
 

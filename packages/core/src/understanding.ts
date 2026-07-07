@@ -54,6 +54,24 @@ export interface Scope {
   bytes: number;
 }
 
+/**
+ * Aggregated screen-time signal from `atoa watch` (on-device OCR).
+ * Aggregates only — raw OCR text and screenshots never leave the machine.
+ */
+export interface ScreenActivity {
+  /** Days in the aggregation window with at least one sample. */
+  days: number;
+  samples: number;
+  /** Rough active hours implied by samples × capture interval. */
+  hoursActive: number;
+  /** Top apps by sample share, most used first (share 0–1). */
+  topApps: { name: string; share: number }[];
+  /** Local hours (0–23) with the most screen activity, top 3. */
+  peakHours: number[];
+  firstSample?: string;
+  lastSample?: string;
+}
+
 export interface Understanding {
   version: 1;
   generatedAt: string;
@@ -63,6 +81,8 @@ export interface Understanding {
   languages: Record<string, number>;
   projects: ProjectSummary[];
   workStyle: WorkStyle | null;
+  /** Present when `atoa watch` has collected screen activity. Aggregates only. */
+  screen?: ScreenActivity | null;
   categories: CategoryScore[];
   /** Weighted overall understanding, 0–100. */
   overall: number;
