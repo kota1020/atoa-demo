@@ -1,0 +1,9 @@
+# dependencies / build
+/node_modules
+/.next
+/out
+/.data
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+.env*.local

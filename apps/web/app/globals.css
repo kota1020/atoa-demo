@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#F6F7F9;
+  --surface:#FFFFFF;
+  --surface-2:#FBFBFC;
+  --ink:#111827;
+  --ink-soft:#374151;
+  --ink-mute:#6B7280;
+  --line:#E7E9EE;
+  --line-strong:#D8DBE2;
+  --teal:#0EA5A0;
+  --teal-soft:#E6F6F5;
+  --teal-ink:#0B7C78;
+  --amber:#F59E0B;
+  --amber-soft:#FEF3E2;
+  --blue:#3B82F6;
+  --rose:#E5484D;
+  --green:#16A34A;
+  --radius:12px;
+}
+
+html,body{padding:0;margin:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+
+.tabular{font-variant-numeric:tabular-nums}
+.no-scrollbar::-webkit-scrollbar{height:0;width:0}
+.no-scrollbar{scrollbar-width:none}
+
+@keyframes bar-in{from{width:0}}
+.bar-fill{animation:bar-in .9s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:reduce){.bar-fill{animation:none}}
