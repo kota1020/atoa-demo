@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AtoA — あなたを誰より理解するAI社員</title>
+<title>AtoA — An AI employee who knows you better than you do</title>
 <style>
   :root {
     --bg: #ffffff;
@@ -559,16 +559,16 @@
   <div class="hero-avatar-wrap">
     <img class="hero-avatar" src="assets/avatar.png" alt="AI employee">
   </div>
-  <h1 class="hero-title">あなたを、あなた以上に<br>理解するAI社員。</h1>
-  <p class="hero-sub">ファイル、コード、仕事の癖まで学習して、初日から働く。</p>
-  <button class="btn btn-primary" onclick="go('welcome')">オンボーディングを始める</button>
+  <h1 class="hero-title">An AI employee who knows you<br>better than you do.</h1>
+  <p class="hero-sub">It learns your files, your code, even your habits — and works from day one.</p>
+  <button class="btn btn-primary" onclick="go('welcome')">Start onboarding</button>
 </section>
 
 <!-- ========== WELCOME ========== -->
 <section class="screen" id="screen-welcome">
   <div class="container narrow onboard-wrap">
-    <h2 class="section-title">新しい仲間を迎えよう</h2>
-    <p class="section-sub">見た目を選んで、名前をつけよう。</p>
+    <h2 class="section-title">Welcome your new teammate</h2>
+    <p class="section-sub">Pick a look, give them a name.</p>
     <div class="avatar-pick">
       <button class="avatar-opt selected" data-src="assets/avatar.png" onclick="pickAvatar(this)">
         <img src="assets/avatar.png" alt="Avatar 1"><span class="pick-dot"></span>
@@ -577,8 +577,8 @@
         <img src="assets/avatar-f.png" alt="Avatar 2"><span class="pick-dot"></span>
       </button>
     </div>
-    <input class="name-line" id="inpName" type="text" value="ハル" placeholder="AI社員の名前">
-    <div><button class="btn btn-mint" onclick="goConnect()">次へ →</button></div>
+    <input class="name-line" id="inpName" type="text" value="Haru" placeholder="Name your AI employee">
+    <div><button class="btn btn-mint" onclick="goConnect()">Next →</button></div>
   </div>
 </section>
 
@@ -586,20 +586,20 @@
 <section class="screen" id="screen-connect">
   <div class="container narrow onboard-wrap">
     <img class="onboard-avatar" id="connectAvatar" src="assets/avatar.png" alt="" style="width:110px">
-    <h2 class="section-title"><span id="connectName">ハル</span>は何から学ぶ？</h2>
-    <p class="section-sub">つなぐほど、あなたをよく理解します — 新しい仲間に鍵を渡すように。</p>
+    <h2 class="section-title">What should <span id="connectName">Haru</span> learn from?</h2>
+    <p class="section-sub">The more you connect, the better they understand you — like handing a new hire the keys.</p>
     <div class="app-grid">
-      <div class="app-tile connected" data-locked="1"><div class="logo" style="background:#1d1d1f">⌂</div><div class="an">ローカルフォルダ</div><div class="st">接続済み ✓</div></div>
-      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#ea4335">M</div><div class="an">Gmail</div><div class="st">接続</div></div>
-      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#611f69">S</div><div class="an">Slack</div><div class="st">接続</div></div>
-      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#0f0f0f">N</div><div class="an">Notion</div><div class="st">接続</div></div>
-      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#24292f">GH</div><div class="an">GitHub</div><div class="st">接続</div></div>
-      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#1a73e8">31</div><div class="an">カレンダー</div><div class="st">接続</div></div>
-      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#06c755">L</div><div class="an">LINE</div><div class="st">接続</div></div>
-      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#635bff">P</div><div class="an">決済</div><div class="st">接続</div></div>
+      <div class="app-tile connected" data-locked="1"><div class="logo" style="background:#1d1d1f">⌂</div><div class="an">Local folders</div><div class="st">Connected ✓</div></div>
+      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#ea4335">M</div><div class="an">Gmail</div><div class="st">Connect</div></div>
+      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#611f69">S</div><div class="an">Slack</div><div class="st">Connect</div></div>
+      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#0f0f0f">N</div><div class="an">Notion</div><div class="st">Connect</div></div>
+      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#24292f">GH</div><div class="an">GitHub</div><div class="st">Connect</div></div>
+      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#1a73e8">31</div><div class="an">Calendar</div><div class="st">Connect</div></div>
+      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#06c755">L</div><div class="an">LINE</div><div class="st">Connect</div></div>
+      <div class="app-tile" onclick="flipApp(this)"><div class="logo" style="background:#635bff">P</div><div class="an">Payments</div><div class="st">Connect</div></div>
     </div>
-    <div class="connect-hint">8個中 <b id="srcCount">1</b>個 接続済み</div>
-    <div><button class="btn btn-mint" onclick="startScan()">雇用して学習を開始 →</button></div>
+    <div class="connect-hint"><b id="srcCount">1</b> of 8 sources connected</div>
+    <div><button class="btn btn-mint" onclick="startScan()">Hire & start training →</button></div>
   </div>
 </section>
 
@@ -607,15 +607,15 @@
 <section class="screen" id="screen-scan">
   <div class="container narrow scan-wrap">
     <img class="scan-avatar" id="scanAvatar" src="assets/avatar.png" alt="">
-    <h2 class="section-title">オンボーディング中…</h2>
-    <p class="scan-status" id="scanStatus">ローカルフォルダを読み込み中</p>
+    <h2 class="section-title">Onboarding in progress…</h2>
+    <p class="scan-status" id="scanStatus">Reading your local folders</p>
     <div class="scan-bar-track"><div class="scan-bar" id="scanBar"></div></div>
     <div class="scan-pct"><span id="scanPct">0</span>%</div>
     <div class="scan-log" id="scanLog"></div>
     <div class="scan-counters">
-      <div class="scan-counter"><div class="num" id="cntFiles">0</div><div class="lbl">ファイル</div></div>
-      <div class="scan-counter"><div class="num" id="cntCode">0</div><div class="lbl">コードファイル</div></div>
-      <div class="scan-counter"><div class="num" id="cntDocs">0</div><div class="lbl">ドキュメント</div></div>
+      <div class="scan-counter"><div class="num" id="cntFiles">0</div><div class="lbl">Files</div></div>
+      <div class="scan-counter"><div class="num" id="cntCode">0</div><div class="lbl">Code files</div></div>
+      <div class="scan-counter"><div class="num" id="cntDocs">0</div><div class="lbl">Documents</div></div>
     </div>
   </div>
 </section>
@@ -623,8 +623,8 @@
 <!-- ========== RESULT ========== -->
 <section class="screen" id="screen-result">
   <div class="container narrow result-wrap">
-    <h2 class="section-title">理解レポート</h2>
-    <p class="section-sub">新しい仲間に教える全て — <span id="resName">ハル</span>が今どこまで理解したか。</p>
+    <h2 class="section-title">Understanding Report</h2>
+    <p class="section-sub">Everything you'd teach a new hire — how much <span id="resName">Haru</span> has learned so far.</p>
     <div class="ring-wrap">
       <svg width="220" height="220" viewBox="0 0 220 220">
         <circle class="ring-bg" cx="110" cy="110" r="96"></circle>
@@ -632,23 +632,23 @@
       </svg>
       <div class="ring-center">
         <div class="big"><span id="ringPct">0</span>%</div>
-        <div class="lbl">総合</div>
+        <div class="lbl">Overall</div>
       </div>
     </div>
     <div class="cat-list">
-      <div class="cat"><span class="name">あなたの背景・ストーリー</span><div class="track"><div class="fill" data-w="89"></div></div><span class="val">89%</span></div>
-      <div class="cat"><span class="name">会社・ミッション</span><div class="track"><div class="fill" data-w="91"></div></div><span class="val">91%</span></div>
-      <div class="cat"><span class="name">プロダクト・コード</span><div class="track"><div class="fill" data-w="92"></div></div><span class="val">92%</span></div>
-      <div class="cat"><span class="name">顧客・関係</span><div class="track"><div class="fill" data-w="74"></div></div><span class="val">74%</span></div>
-      <div class="cat"><span class="name">働き方・意思決定</span><div class="track"><div class="fill low" data-w="58"></div></div><span class="val">58%</span></div>
+      <div class="cat"><span class="name">Your background & story</span><div class="track"><div class="fill" data-w="89"></div></div><span class="val">89%</span></div>
+      <div class="cat"><span class="name">Company & mission</span><div class="track"><div class="fill" data-w="91"></div></div><span class="val">91%</span></div>
+      <div class="cat"><span class="name">Products & codebase</span><div class="track"><div class="fill" data-w="92"></div></div><span class="val">92%</span></div>
+      <div class="cat"><span class="name">Customers & relationships</span><div class="track"><div class="fill" data-w="74"></div></div><span class="val">74%</span></div>
+      <div class="cat"><span class="name">How you work & decide</span><div class="track"><div class="fill low" data-w="58"></div></div><span class="val">58%</span></div>
     </div>
     <div class="result-callout">
       <span class="emoji">💡</span>
-      <p><strong>「働き方・意思決定」がまだ盲点です。</strong><br>ファイルは背景や会社は教えられても、実際の働き方までは教えられません。新しい仲間の隣に座るように画面やカメラを共有すれば、<span id="calloutName">ハル</span>が残りを学びます。</p>
+      <p><strong>How you work & decide is still a blind spot.</strong><br>Files can teach your background and your company — but not how you actually work. Share your screen or camera, like sitting next to a new hire, and <span id="calloutName">Haru</span> learns the rest.</p>
     </div>
     <div class="btn-row">
-      <button class="btn btn-mint" onclick="go('habit')">働き方の分析を始める（カメラ / 画面）</button>
-      <button class="btn btn-ghost" onclick="enterDashboard()">スキップしてダッシュボードへ</button>
+      <button class="btn btn-mint" onclick="go('habit')">Start habit analysis (Camera / Screen)</button>
+      <button class="btn btn-ghost" onclick="enterDashboard()">Skip to dashboard</button>
     </div>
   </div>
 </section>
@@ -656,28 +656,28 @@
 <!-- ========== HABIT ANALYSIS ========== -->
 <section class="screen" id="screen-habit">
   <div class="container habit-wrap">
-    <h2 class="section-title">働き方の分析セッション</h2>
-    <p class="section-sub">いつも通りに作業するだけ。<span id="habitName">ハル</span>があなたの癖を学びます。</p>
+    <h2 class="section-title">Habit Analysis Session</h2>
+    <p class="section-sub">Just work like you always do. <span id="habitName">Haru</span> will learn your habits.</p>
     <div class="video-stage" id="videoStage">
       <div class="video-placeholder" id="videoPlaceholder">
         <span class="cam-ico">🎥</span>
-        <span>カメラをオンにするか、画面を共有してください</span>
+        <span>Turn on your camera or share your screen</span>
       </div>
       <video id="video" autoplay muted playsinline style="display:none"></video>
       <div class="scanline"></div>
-      <div class="rec-badge"><span class="rec-dot"></span>分析中</div>
+      <div class="rec-badge"><span class="rec-dot"></span>Analyzing</div>
     </div>
     <div class="btn-row" style="margin-bottom:32px">
-      <button class="btn btn-ghost btn-sm" id="btnCam" onclick="startCamera()">📷 カメラをオン</button>
-      <button class="btn btn-ghost btn-sm" id="btnScreen" onclick="startScreen()">🖥 画面を共有</button>
-      <button class="btn btn-ghost btn-sm" onclick="startDemoAnalysis()">▶︎ デモを実行</button>
+      <button class="btn btn-ghost btn-sm" id="btnCam" onclick="startCamera()">📷 Turn on camera</button>
+      <button class="btn btn-ghost btn-sm" id="btnScreen" onclick="startScreen()">🖥 Share screen</button>
+      <button class="btn btn-ghost btn-sm" onclick="startDemoAnalysis()">▶︎ Run demo</button>
     </div>
     <div class="insight-chips" id="chips"></div>
     <div class="habit-progress">
-      <div class="row"><span>総合理解度</span><span class="now"><span id="habitPct">80</span>%</span></div>
+      <div class="row"><span>Overall understanding</span><span class="now"><span id="habitPct">80</span>%</span></div>
       <div class="scan-bar-track" style="margin:0"><div class="scan-bar" id="habitBar" style="width:80%"></div></div>
     </div>
-    <button class="btn btn-mint" id="btnHabitDone" style="display:none" onclick="enterDashboard()">オンボーディング完了 🎉 ダッシュボードへ</button>
+    <button class="btn btn-mint" id="btnHabitDone" style="display:none" onclick="enterDashboard()">Onboarding complete 🎉 Go to dashboard</button>
   </div>
 </section>
 
@@ -687,32 +687,32 @@
     <aside class="sidebar">
       <div class="side-emp">
         <img id="sideAvatar" src="assets/avatar.png" alt="">
-        <div><div class="n" id="sideName">Haru</div><div class="p"><span id="sidePct">80</span>% 理解</div></div>
+        <div><div class="n" id="sideName">Haru</div><div class="p"><span id="sidePct">80</span>% understood</div></div>
       </div>
-      <div class="side-item give-task" data-view="task" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/><path d="M8 10.5h8M8 14h5"/></svg>タスクを渡す</div>
-      <div class="side-item active" data-view="overview" onclick="switchView(this)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>概要</div>
-      <div class="side-label">事業</div>
-      <div class="side-item" data-view="yearplan" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M4 21V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg>事業計画</div>
-      <div class="side-item" data-view="sales" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>営業</div>
-      <div class="side-item" data-view="funnels" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/></svg>ファネル</div>
-      <div class="side-item" data-view="contracts" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>契約</div>
-      <div class="side-item" data-view="products" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg>プロダクト</div>
-      <div class="side-item" data-view="payments" onclick="switchView(this)"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>支払い</div>
-      <div class="side-label">AI社員</div>
-      <div class="side-item" data-view="automation" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>自動化</div>
-      <div class="side-item" data-view="team" onclick="switchView(this)"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.5c2.8 0 4.5 1.8 4.5 4"/></svg>チーム</div>
-      <div class="side-item" data-view="reports" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>レポート</div>
-      <div class="side-item" data-view="settings" onclick="switchView(this)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.7a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.7a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg>設定</div>
+      <div class="side-item give-task" data-view="task" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/><path d="M8 10.5h8M8 14h5"/></svg>Give Task</div>
+      <div class="side-item active" data-view="overview" onclick="switchView(this)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Overview</div>
+      <div class="side-label">Business</div>
+      <div class="side-item" data-view="yearplan" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M4 21V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg>Year Plan</div>
+      <div class="side-item" data-view="sales" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>Sales</div>
+      <div class="side-item" data-view="funnels" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/></svg>Funnels</div>
+      <div class="side-item" data-view="contracts" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>Contracts</div>
+      <div class="side-item" data-view="products" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg>Products</div>
+      <div class="side-item" data-view="payments" onclick="switchView(this)"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Payments</div>
+      <div class="side-label">AI Employee</div>
+      <div class="side-item" data-view="automation" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Agent Automation</div>
+      <div class="side-item" data-view="team" onclick="switchView(this)"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.5c2.8 0 4.5 1.8 4.5 4"/></svg>Team Details</div>
+      <div class="side-item" data-view="reports" onclick="switchView(this)"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>Reports</div>
+      <div class="side-item" data-view="settings" onclick="switchView(this)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.7a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.7a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg>Settings</div>
     </aside>
     <main class="dash-main"><div class="inner">
 
     <div class="dash-view" id="view-overview">
     <div class="dash-head">
       <div>
-        <h2>マイダッシュボード</h2>
+        <h2>My Dashboard</h2>
         <div class="date" id="dashDate"></div>
       </div>
-      <span class="status-pill"><span class="dot"></span>A2A商談 進行中 — LINEグループで交渉中</span>
+      <span class="status-pill"><span class="dot"></span>A2A deal in progress — talking in LINE group</span>
     </div>
 
     <div class="grid">
@@ -722,8 +722,8 @@
           <img id="dashAvatar" src="assets/avatar.png" alt="">
           <div>
             <div class="name" id="dashName">Haru</div>
-            <div class="role" id="dashDept">営業 · A2A商談チーム · 初日</div>
-            <span class="status-pill"><span class="dot"></span>みどり商事と交渉中</span>
+            <div class="role" id="dashDept">Sales · A2A Deals Team · Day 1</div>
+            <span class="status-pill"><span class="dot"></span>Negotiating with Midori Trading Co.</span>
           </div>
           <div class="emp-ring">
             <svg width="76" height="76" viewBox="0 0 76 76">
@@ -737,77 +737,77 @@
 
       <!-- KPI -->
       <div class="card col-5">
-        <h3>今週</h3>
+        <h3>This week</h3>
         <div class="kpi-row">
-          <div class="kpi"><div class="num">3</div><div class="lbl">進行中の商談</div><div class="delta">今週 +2</div></div>
-          <div class="kpi"><div class="num">12</div><div class="lbl">作成した資料</div><div class="delta">今週 +5</div></div>
-          <div class="kpi"><div class="num">1</div><div class="lbl">承認待ちの支払い</div><div class="delta">要確認</div></div>
+          <div class="kpi"><div class="num">3</div><div class="lbl">Active deals</div><div class="delta">+2 this week</div></div>
+          <div class="kpi"><div class="num">12</div><div class="lbl">Docs created</div><div class="delta">+5 this week</div></div>
+          <div class="kpi"><div class="num">1</div><div class="lbl">Pending payment</div><div class="delta">Needs review</div></div>
         </div>
       </div>
 
       <!-- A2A deals -->
       <div class="card col-7">
-        <h3>A2A商談 <span class="more" onclick="toast('会話履歴はLINEグループにあります（デモ）')">すべて見る</span></h3>
+        <h3>A2A Deals <span class="more" onclick="toast('Full conversation history lives in the LINE group (demo)')">View all</span></h3>
         <div class="deal">
           <div class="deal-logo" style="background:#34c759">M</div>
           <div class="deal-info">
-            <div class="co">みどり商事</div>
-            <div class="desc">年間契約の割引を相手のエージェントと交渉中（¥480k → ¥440k/月を提示）</div>
+            <div class="co">Midori Trading Co.</div>
+            <div class="desc">Negotiating annual contract discount with their agent (¥480k → ¥440k/mo offered)</div>
           </div>
-          <span class="stage-pill stage-nego">交渉中</span>
-          <button class="line-link" onclick="toast('エージェント同士の会話をLINEグループで見る（デモ）')">LINEで会話を見る ↗</button>
+          <span class="stage-pill stage-nego">Negotiation</span>
+          <button class="line-link" onclick="toast('Watch the agents talk in the LINE group (demo)')">View chat in LINE ↗</button>
         </div>
         <div class="deal">
           <div class="deal-logo" style="background:#0a84ff">A</div>
           <div class="deal-info">
-            <div class="co">青山テック</div>
-            <div class="desc">見積合意。契約ドラフトを相手のエージェントに送付</div>
+            <div class="co">Aoyama Tech LLC</div>
+            <div class="desc">Quote agreed. Contract draft sent to their agent</div>
           </div>
-          <span class="stage-pill stage-close">クロージング</span>
-          <button class="line-link" onclick="toast('エージェント同士の会話をLINEグループで見る（デモ）')">LINEで会話を見る ↗</button>
+          <span class="stage-pill stage-close">Closing</span>
+          <button class="line-link" onclick="toast('Watch the agents talk in the LINE group (demo)')">View chat in LINE ↗</button>
         </div>
         <div class="deal">
           <div class="deal-logo" style="background:#ff9f0a">S</div>
           <div class="deal-info">
-            <div class="co">さくら印刷</div>
-            <div class="desc">相手のエージェントとヒアリング — 要件を整理中</div>
+            <div class="co">Sakura Printing Inc.</div>
+            <div class="desc">Discovery call with their agent — mapping out requirements</div>
           </div>
-          <span class="stage-pill stage-hear">ヒアリング</span>
-          <button class="line-link" onclick="toast('エージェント同士の会話をLINEグループで見る（デモ）')">LINEで会話を見る ↗</button>
+          <span class="stage-pill stage-hear">Discovery</span>
+          <button class="line-link" onclick="toast('Watch the agents talk in the LINE group (demo)')">View chat in LINE ↗</button>
         </div>
       </div>
 
       <!-- APA payment -->
       <div class="card col-5 pay-card">
-        <h3><span>APA支払い <span class="pay-tag">承認待ち</span></span></h3>
+        <h3><span>APA Payment <span class="pay-tag">PENDING</span></span></h3>
         <div class="pay-amount">¥480,000</div>
-        <div class="pay-from">青山テック — 初期セットアップ費用（商談 #A-102 の合意に基づく）</div>
+        <div class="pay-from">Aoyama Tech LLC — initial setup fee (per agreement in deal #A-102)</div>
         <div id="payActions">
           <div class="btn-row" style="justify-content:flex-start">
-            <button class="btn btn-mint btn-sm" onclick="approvePay()">支払いリンクを開く</button>
-            <button class="btn btn-ghost btn-sm" onclick="toast('スキップしました（デモ）')">後で</button>
+            <button class="btn btn-mint btn-sm" onclick="approvePay()">Open payment link</button>
+            <button class="btn btn-ghost btn-sm" onclick="toast('Skipped (demo)')">Later</button>
           </div>
         </div>
-        <div class="pay-done" id="payDone">✅ 支払いリンクを承認しました（デモ）</div>
+        <div class="pay-done" id="payDone">✅ Payment link approved (demo)</div>
       </div>
 
       <!-- reports -->
       <div class="card col-6">
-        <h3>成果物・レポート</h3>
-        <div class="report"><div class="ico">📕</div><div><div class="t">みどり商事 — 提案書 v3.pdf</div><div class="m">あなたの書き方で：結論から — 14:02</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
-        <div class="report"><div class="ico">📄</div><div><div class="t">商談サマリ — 青山テック（7/4）</div><div class="m">合意内容と次のアクション — 昨日</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
-        <div class="report"><div class="ico">📊</div><div><div class="t">週次 営業パイプラインレポート</div><div class="m">商談3件 / 見込 ¥1,280,000 — 昨日</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
+        <h3>Deliverables & Reports</h3>
+        <div class="report"><div class="ico">📕</div><div><div class="t">Midori Trading — Proposal v3.pdf</div><div class="m">Written the way you write: conclusion first — 2:02 PM</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
+        <div class="report"><div class="ico">📄</div><div><div class="t">Deal summary — Aoyama Tech (Jul 4)</div><div class="m">Agreed terms & next actions — yesterday</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
+        <div class="report"><div class="ico">📊</div><div><div class="t">Weekly sales pipeline report</div><div class="m">3 deals / ¥1,280,000 projected — yesterday</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
       </div>
 
       <!-- activity -->
       <div class="card col-6">
-        <h3>最近の動き</h3>
+        <h3>Activity</h3>
         <div class="tl">
-          <div class="tl-item"><div class="tt">みどり商事のエージェントに修正見積を送信</div><div class="tm">6分前 · LINEグループ</div></div>
-          <div class="tl-item"><div class="tt">APA支払いリンク（¥480,000）を受信 → あなたの承認待ち</div><div class="tm">32分前</div></div>
-          <div class="tl-item muted"><div class="tt">提案書 v3 を作成（働き方プロファイル適用）</div><div class="tm">1時間前</div></div>
-          <div class="tl-item muted"><div class="tt">さくら印刷のエージェントとヒアリング開始</div><div class="tm">3時間前</div></div>
-          <div class="tl-item muted"><div class="tt">オンボーディングと理解レポートが完了</div><div class="tm">今日</div></div>
+          <div class="tl-item"><div class="tt">Sent revised quote to Midori Trading's agent</div><div class="tm">6 min ago · LINE group</div></div>
+          <div class="tl-item"><div class="tt">Received APA payment link (¥480,000) → awaiting your approval</div><div class="tm">32 min ago</div></div>
+          <div class="tl-item muted"><div class="tt">Generated Proposal v3 (habit profile applied)</div><div class="tm">1 hour ago</div></div>
+          <div class="tl-item muted"><div class="tt">Started discovery with Sakura Printing's agent</div><div class="tm">3 hours ago</div></div>
+          <div class="tl-item muted"><div class="tt">Onboarding & understanding report completed</div><div class="tm">today</div></div>
         </div>
       </div>
     </div>
@@ -815,53 +815,53 @@
 
     <!-- ===== GIVE TASK ===== -->
     <div class="dash-view" id="view-task" style="display:none">
-      <div class="view-head"><h2>タスクを渡す</h2><div class="sub"><span class="chatNameSlot">ハル</span>に必要なことを伝えて — あとは全部やってくれます。</div></div>
+      <div class="view-head"><h2>Give Task</h2><div class="sub">Tell <span class="chatNameSlot">Haru</span> what you need — they'll figure out the rest.</div></div>
       <div class="chat-panel">
         <div class="chat-log" id="chatLog">
           <div class="msg ai">
             <img class="av chat-ai-av" src="assets/avatar.png" alt="">
-            <div class="bubble">やあ！何が必要？営業・資料・リサーチ、なんでも任せて。💪</div>
+            <div class="bubble">Hey! What do you need? Sales, documents, research — give me anything. 💪</div>
           </div>
         </div>
         <div class="chat-sugg" id="chatSugg">
-          <span class="sugg" onclick="sendTask('最近 営業が伸び悩んでる…')">最近 営業が伸び悩んでる…</span>
-          <span class="sugg" onclick="sendTask('みどり商事向けの提案資料を作って')">提案資料を作って</span>
-          <span class="sugg" onclick="sendTask('今週をまとめて')">今週をまとめて</span>
+          <span class="sugg" onclick="sendTask('Sales is struggling lately…')">Sales is struggling lately…</span>
+          <span class="sugg" onclick="sendTask('Make a pitch deck for Midori Trading')">Make a pitch deck</span>
+          <span class="sugg" onclick="sendTask('Summarize this week')">Summarize this week</span>
         </div>
         <div class="chat-input">
-          <input id="chatInput" type="text" placeholder="タスクを入力…" onkeydown="if(event.key==='Enter')sendTask()">
-          <button onclick="sendTask()">送信</button>
+          <input id="chatInput" type="text" placeholder="Give a task…" onkeydown="if(event.key==='Enter')sendTask()">
+          <button onclick="sendTask()">Send</button>
         </div>
       </div>
     </div>
 
     <!-- ===== YEAR PLAN ===== -->
     <div class="dash-view" id="view-yearplan" style="display:none">
-      <div class="view-head"><h2>事業計画</h2><div class="sub">あなたとAI社員が共有する、ひとつの成長の道すじ。</div></div>
+      <div class="view-head"><h2>Year Plan</h2><div class="sub">One growth path, shared by you and your AI employee.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>2026 — 成長の道すじ</h3><span class="panel-tag">年間</span></div>
-        <p class="panel-sub">現在地：<strong>初のAI社員を雇用（7月）</strong>。ここからは複利で効きます — AI社員が学ぶ各マイルストーンが、次を到達しやすくします。</p>
+        <div class="panel-head"><h3>2026 — Path of growth</h3><span class="panel-tag">Yearly</span></div>
+        <p class="panel-sub">We are here: <strong>first AI employee hired (Jul)</strong>. Everything from now on compounds — each milestone your AI employee learns from makes the next one cheaper to reach.</p>
         <div class="yp-scroll">
           <div class="yp-timeline">
             <div class="yp-progress" style="width:50%"></div>
-            <div class="yp-item done"><div class="yp-dot"></div><div class="yp-m">1月</div><div class="yp-t">会社をリセット</div><div class="yp-d">新しい方向・新しいスタック</div></div>
-            <div class="yp-item done"><div class="yp-dot"></div><div class="yp-m">3月</div><div class="yp-t">プロダクト v1 ローンチ</div><div class="yp-d">ZeroGridアプリ 公開</div></div>
-            <div class="yp-item done"><div class="yp-dot"></div><div class="yp-m">5月</div><div class="yp-t">最初の100ユーザー</div><div class="yp-d">累計売上 ¥1.1M</div></div>
-            <div class="yp-item now"><span class="yp-now-badge">現在</span><div class="yp-dot"></div><div class="yp-m">7月</div><div class="yp-t">初のAI社員</div><div class="yp-d">理解度96%でオンボード</div></div>
-            <div class="yp-item future"><div class="yp-dot"></div><div class="yp-m">9月</div><div class="yp-t">A2A営業を自動化</div><div class="yp-d">MRR ¥3M · 商談はエージェント同士で</div></div>
-            <div class="yp-item future"><div class="yp-dot"></div><div class="yp-m">12月</div><div class="yp-t">AI社員10人体制</div><div class="yp-d">MRR ¥10M · 人間は意思決定だけ</div></div>
+            <div class="yp-item done"><div class="yp-dot"></div><div class="yp-m">JAN</div><div class="yp-t">Company reset</div><div class="yp-d">New direction, new stack</div></div>
+            <div class="yp-item done"><div class="yp-dot"></div><div class="yp-m">MAR</div><div class="yp-t">Product v1 launch</div><div class="yp-d">ZeroGrid App live</div></div>
+            <div class="yp-item done"><div class="yp-dot"></div><div class="yp-m">MAY</div><div class="yp-t">First 100 users</div><div class="yp-d">¥1.1M cumulative revenue</div></div>
+            <div class="yp-item now"><span class="yp-now-badge">NOW</span><div class="yp-dot"></div><div class="yp-m">JUL</div><div class="yp-t">First AI employee</div><div class="yp-d">Onboarded at 96% understanding</div></div>
+            <div class="yp-item future"><div class="yp-dot"></div><div class="yp-m">SEP</div><div class="yp-t">A2A sales automated</div><div class="yp-d">¥3M MRR · deals run agent-to-agent</div></div>
+            <div class="yp-item future"><div class="yp-dot"></div><div class="yp-m">DEC</div><div class="yp-t">Team of 10 AI employees</div><div class="yp-d">¥10M MRR · human = decisions only</div></div>
           </div>
         </div>
       </div>
       <div class="panel">
-        <div class="panel-head"><h3>四半期目標</h3><span class="panel-tag">売上</span></div>
+        <div class="panel-head"><h3>Quarterly targets</h3><span class="panel-tag">Revenue</span></div>
         <table class="tbl">
-          <thead><tr><th>四半期</th><th>目標</th><th>実績</th><th>状態</th></tr></thead>
+          <thead><tr><th>Quarter</th><th>Target</th><th>Actual</th><th>Status</th></tr></thead>
           <tbody>
-            <tr><td class="co-cell">Q1</td><td class="num">¥400,000</td><td class="num">¥460,000</td><td><span class="stage-pill stage-close">達成 · 115%</span></td></tr>
-            <tr><td class="co-cell">Q2</td><td class="num">¥1,000,000</td><td class="num">¥1,120,000</td><td><span class="stage-pill stage-close">達成 · 112%</span></td></tr>
-            <tr><td class="co-cell">Q3</td><td class="num">¥3,000,000</td><td class="num">¥804,000（現在）</td><td><span class="stage-pill stage-nego">進行中</span></td></tr>
-            <tr><td class="co-cell">Q4</td><td class="num">¥10,000,000</td><td class="num">—</td><td><span class="stage-pill stage-hear">予定</span></td></tr>
+            <tr><td class="co-cell">Q1</td><td class="num">¥400,000</td><td class="num">¥460,000</td><td><span class="stage-pill stage-close">Hit · 115%</span></td></tr>
+            <tr><td class="co-cell">Q2</td><td class="num">¥1,000,000</td><td class="num">¥1,120,000</td><td><span class="stage-pill stage-close">Hit · 112%</span></td></tr>
+            <tr><td class="co-cell">Q3</td><td class="num">¥3,000,000</td><td class="num">¥804,000 so far</td><td><span class="stage-pill stage-nego">In progress</span></td></tr>
+            <tr><td class="co-cell">Q4</td><td class="num">¥10,000,000</td><td class="num">—</td><td><span class="stage-pill stage-hear">Planned</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -869,27 +869,27 @@
 
     <!-- ===== SALES ===== -->
     <div class="dash-view" id="view-sales" style="display:none">
-      <div class="view-head"><h2>営業</h2><div class="sub">すべてAI社員が回す — あなたは確認するだけ。</div></div>
+      <div class="view-head"><h2>Sales</h2><div class="sub">Run entirely by your AI employee — you only review.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>週次 計画 vs 実績</h3><span class="panel-tag">週次</span></div>
-        <p class="panel-sub">第3週は¥804k（計画の36%）で着地。一方で<strong>アプローチ量はすでに倍増</strong> — 売上はアプローチに遅れて付いてくるので、効果は今後数週間で表れます。</p>
-        <div class="chart-legend"><span><span class="sw" style="background:#e8e8ed"></span>計画</span><span><span class="sw" style="background:var(--mint)"></span>実績</span></div>
+        <div class="panel-head"><h3>Weekly plan vs actual</h3><span class="panel-tag">Weekly</span></div>
+        <p class="panel-sub">W3 closed at ¥804k (36% of plan). Meanwhile <strong>outreach volume has already doubled</strong> — revenue follows outreach with a lag, so the effect should show up in the coming weeks.</p>
+        <div class="chart-legend"><span><span class="sw" style="background:#e8e8ed"></span>Plan</span><span><span class="sw" style="background:var(--mint)"></span>Actual</span></div>
         <div class="chart">
           <div class="bgroup"><div class="bar target" style="height:78%"></div><div class="bar actual" style="height:40%"></div></div>
           <div class="bgroup"><div class="bar target" style="height:83%"></div><div class="bar actual" style="height:39%"></div></div>
           <div class="bgroup"><div class="bar target" style="height:89%"></div><div class="bar actual" style="height:32%"></div></div>
           <div class="bgroup"><div class="bar target" style="height:95%"></div><div class="bar actual" style="height:14%"></div></div>
         </div>
-        <div class="chart-x"><span>第1週 6/10〜</span><span>第2週 6/17〜</span><span>第3週 6/24〜</span><span>第4週 7/1〜(2日)</span></div>
+        <div class="chart-x"><span>W1 6/10–</span><span>W2 6/17–</span><span>W3 6/24–</span><span>W4 7/1–(2d)</span></div>
       </div>
       <div class="panel">
-        <div class="panel-head"><h3>パイプライン</h3><span class="panel-tag">3件 進行中</span></div>
+        <div class="panel-head"><h3>Pipeline</h3><span class="panel-tag">3 active</span></div>
         <table class="tbl">
-          <thead><tr><th>会社</th><th>ステージ</th><th>金額</th><th>次のアクション</th></tr></thead>
+          <thead><tr><th>Company</th><th>Stage</th><th>Value</th><th>Next action</th></tr></thead>
           <tbody>
-            <tr><td class="co-cell">みどり商事</td><td><span class="stage-pill stage-nego">交渉中</span></td><td class="num">¥5,280,000 / 年</td><td>カウンターオファー送付、返信待ち</td></tr>
-            <tr><td class="co-cell">青山テック</td><td><span class="stage-pill stage-close">クロージング</span></td><td class="num">¥480,000</td><td>契約ドラフトを相手のエージェントと</td></tr>
-            <tr><td class="co-cell">さくら印刷</td><td><span class="stage-pill stage-hear">ヒアリング</span></td><td class="num">— 未定</td><td>要件を整理中</td></tr>
+            <tr><td class="co-cell">Midori Trading Co.</td><td><span class="stage-pill stage-nego">Negotiation</span></td><td class="num">¥5,280,000 / yr</td><td>Counter-offer sent, awaiting reply</td></tr>
+            <tr><td class="co-cell">Aoyama Tech LLC</td><td><span class="stage-pill stage-close">Closing</span></td><td class="num">¥480,000</td><td>Contract draft with their agent</td></tr>
+            <tr><td class="co-cell">Sakura Printing Inc.</td><td><span class="stage-pill stage-hear">Discovery</span></td><td class="num">— TBD</td><td>Requirements mapping</td></tr>
           </tbody>
         </table>
       </div>
@@ -897,53 +897,53 @@
 
     <!-- ===== FUNNELS ===== -->
     <div class="dash-view" id="view-funnels" style="display:none">
-      <div class="view-head"><h2>ファネル</h2><div class="sub">顧客がどこで離れるかを正確に — そして直すのはその一段だけ。</div></div>
+      <div class="view-head"><h2>Funnels</h2><div class="sub">See exactly where customers drop — then fix that step, nothing else.</div></div>
 
       <div class="panel">
-        <div class="panel-head"><h3>顧客ファネル</h3><span class="panel-tag">直近30日</span></div>
-        <p class="panel-sub">最大の離脱：<strong>有効化 → 有料 の転換率がわずか27%</strong>。あなたの働き方プロファイルによると、ライブデモで最も成約します — なので昨日から、有効化した全ユーザーにデモ面談を自動提案し始めました。まずここが動くはずです。</p>
+        <div class="panel-head"><h3>Customer funnel</h3><span class="panel-tag">Last 30 days</span></div>
+        <p class="panel-sub">Biggest leak: <strong>Activated → Paid converts at only 27%</strong>. Your habit profile says you close best on live demos — so I started auto-offering a demo call to every activated user yesterday. Expect this step to move first.</p>
         <div class="funnel">
-          <div class="f-row"><span class="f-stage">サイト訪問</span><div class="f-bar-wrap"><div class="f-bar" style="width:100%"></div></div><span class="f-num">12,400</span></div>
-          <div class="f-drop"><span>▼ 3.2% 転換</span></div>
-          <div class="f-row"><span class="f-stage">登録</span><div class="f-bar-wrap"><div class="f-bar" style="width:60%"></div></div><span class="f-num">396</span></div>
-          <div class="f-drop"><span>▼ 54% 有効化</span></div>
-          <div class="f-row"><span class="f-stage">有効化</span><div class="f-bar-wrap"><div class="f-bar" style="width:40%"></div></div><span class="f-num">214</span></div>
-          <div class="f-drop"><span class="bad">▼ 27% — 最大の離脱</span></div>
-          <div class="f-row"><span class="f-stage">有料</span><div class="f-bar-wrap"><div class="f-bar leak" style="width:20%"></div></div><span class="f-num">58<small>改善中</small></span></div>
-          <div class="f-drop"><span>▼ 71% 継続</span></div>
-          <div class="f-row"><span class="f-stage">継続（90日）</span><div class="f-bar-wrap"><div class="f-bar" style="width:14%"></div></div><span class="f-num">41</span></div>
+          <div class="f-row"><span class="f-stage">Website visits</span><div class="f-bar-wrap"><div class="f-bar" style="width:100%"></div></div><span class="f-num">12,400</span></div>
+          <div class="f-drop"><span>▼ 3.2% convert</span></div>
+          <div class="f-row"><span class="f-stage">Signups</span><div class="f-bar-wrap"><div class="f-bar" style="width:60%"></div></div><span class="f-num">396</span></div>
+          <div class="f-drop"><span>▼ 54% activate</span></div>
+          <div class="f-row"><span class="f-stage">Activated</span><div class="f-bar-wrap"><div class="f-bar" style="width:40%"></div></div><span class="f-num">214</span></div>
+          <div class="f-drop"><span class="bad">▼ 27% — biggest leak</span></div>
+          <div class="f-row"><span class="f-stage">Paid</span><div class="f-bar-wrap"><div class="f-bar leak" style="width:20%"></div></div><span class="f-num">58<small>fix in progress</small></span></div>
+          <div class="f-drop"><span>▼ 71% retain</span></div>
+          <div class="f-row"><span class="f-stage">Retained (90d)</span><div class="f-bar-wrap"><div class="f-bar" style="width:14%"></div></div><span class="f-num">41</span></div>
         </div>
       </div>
 
       <div class="panel">
-        <div class="panel-head"><h3>A2A商談ファネル</h3><span class="panel-tag">エージェント同士</span></div>
-        <p class="panel-sub">エージェントのアプローチは<strong>コールドメールよりはるかに高転換</strong> — 返信率75%（以前は4%）。このファネルの狭い部分は単に量です：相手エージェントを増やせば全体が拡大します。</p>
+        <div class="panel-head"><h3>A2A deal funnel</h3><span class="panel-tag">Agent-to-agent</span></div>
+        <p class="panel-sub">Agent outreach converts <strong>far better than cold email</strong> — replies at 75% vs your old 4%. The narrow part of this funnel is simply volume: connect more counterpart agents and the whole funnel scales.</p>
         <div class="funnel">
-          <div class="f-row"><span class="f-stage">接触したエージェント</span><div class="f-bar-wrap"><div class="f-bar" style="width:100%"></div></div><span class="f-num">24</span></div>
-          <div class="f-drop"><span>▼ 75% 返信</span></div>
-          <div class="f-row"><span class="f-stage">会話中</span><div class="f-bar-wrap"><div class="f-bar" style="width:74%"></div></div><span class="f-num">18</span></div>
-          <div class="f-drop"><span>▼ 33% 有望</span></div>
-          <div class="f-row"><span class="f-stage">交渉中</span><div class="f-bar-wrap"><div class="f-bar" style="width:34%"></div></div><span class="f-num">6</span></div>
-          <div class="f-drop"><span>▼ 50% 合意</span></div>
-          <div class="f-row"><span class="f-stage">条件合意</span><div class="f-bar-wrap"><div class="f-bar" style="width:18%"></div></div><span class="f-num">3</span></div>
-          <div class="f-drop"><span>▼ 67% 支払い</span></div>
-          <div class="f-row"><span class="f-stage">支払い（APA）</span><div class="f-bar-wrap"><div class="f-bar" style="width:12%"></div></div><span class="f-num">2</span></div>
+          <div class="f-row"><span class="f-stage">Agents contacted</span><div class="f-bar-wrap"><div class="f-bar" style="width:100%"></div></div><span class="f-num">24</span></div>
+          <div class="f-drop"><span>▼ 75% replied</span></div>
+          <div class="f-row"><span class="f-stage">In conversation</span><div class="f-bar-wrap"><div class="f-bar" style="width:74%"></div></div><span class="f-num">18</span></div>
+          <div class="f-drop"><span>▼ 33% qualified</span></div>
+          <div class="f-row"><span class="f-stage">Negotiating</span><div class="f-bar-wrap"><div class="f-bar" style="width:34%"></div></div><span class="f-num">6</span></div>
+          <div class="f-drop"><span>▼ 50% agreed</span></div>
+          <div class="f-row"><span class="f-stage">Terms agreed</span><div class="f-bar-wrap"><div class="f-bar" style="width:18%"></div></div><span class="f-num">3</span></div>
+          <div class="f-drop"><span>▼ 67% paid</span></div>
+          <div class="f-row"><span class="f-stage">Paid (APA)</span><div class="f-bar-wrap"><div class="f-bar" style="width:12%"></div></div><span class="f-num">2</span></div>
         </div>
       </div>
     </div>
 
     <!-- ===== CONTRACTS ===== -->
     <div class="dash-view" id="view-contracts" style="display:none">
-      <div class="view-head"><h2>契約</h2><div class="sub">AI社員が起案・追跡します。</div></div>
+      <div class="view-head"><h2>Contracts</h2><div class="sub">Drafted and tracked by your AI employee.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>すべての契約</h3><span class="panel-tag">4件</span></div>
+        <div class="panel-head"><h3>All contracts</h3><span class="panel-tag">4 documents</span></div>
         <table class="tbl">
-          <thead><tr><th>書類</th><th>相手先</th><th>状態</th><th>更新</th></tr></thead>
+          <thead><tr><th>Document</th><th>Counterparty</th><th>Status</th><th>Updated</th></tr></thead>
           <tbody>
-            <tr><td class="co-cell">業務委託基本契約</td><td>青山テック</td><td><span class="stage-pill stage-close">署名済み</span></td><td class="num">7/4</td></tr>
-            <tr><td class="co-cell">年間供給契約</td><td>みどり商事</td><td><span class="stage-pill stage-nego">レビュー中</span></td><td class="num">7/5</td></tr>
-            <tr><td class="co-cell">NDA</td><td>さくら印刷</td><td><span class="stage-pill stage-hear">下書き</span></td><td class="num">7/5</td></tr>
-            <tr><td class="co-cell">SOW #A-102 — 初期セットアップ</td><td>青山テック</td><td><span class="stage-pill stage-close">署名済み</span></td><td class="num">7/4</td></tr>
+            <tr><td class="co-cell">Master Service Agreement</td><td>Aoyama Tech LLC</td><td><span class="stage-pill stage-close">Signed</span></td><td class="num">Jul 4</td></tr>
+            <tr><td class="co-cell">Annual Supply Agreement</td><td>Midori Trading Co.</td><td><span class="stage-pill stage-nego">Under review</span></td><td class="num">Jul 5</td></tr>
+            <tr><td class="co-cell">NDA</td><td>Sakura Printing Inc.</td><td><span class="stage-pill stage-hear">Draft</span></td><td class="num">Jul 5</td></tr>
+            <tr><td class="co-cell">SOW #A-102 — Initial setup</td><td>Aoyama Tech LLC</td><td><span class="stage-pill stage-close">Signed</span></td><td class="num">Jul 4</td></tr>
           </tbody>
         </table>
       </div>
@@ -951,15 +951,15 @@
 
     <!-- ===== PRODUCTS ===== -->
     <div class="dash-view" id="view-products" style="display:none">
-      <div class="view-head"><h2>プロダクト</h2><div class="sub">会社が届けるもの — コードから学習。</div></div>
+      <div class="view-head"><h2>Products</h2><div class="sub">What the company ships — learned from your codebase.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>プロダクトの健康状態</h3><span class="panel-tag">今週</span></div>
+        <div class="panel-head"><h3>Product health</h3><span class="panel-tag">This week</span></div>
         <table class="tbl">
-          <thead><tr><th>プロダクト</th><th>主要指標</th><th>推移</th><th>担当</th></tr></thead>
+          <thead><tr><th>Product</th><th>Key metric</th><th>Trend</th><th>Owner</th></tr></thead>
           <tbody>
-            <tr><td class="co-cell">ZeroGrid App</td><td class="num">週間利用者 142</td><td style="color:var(--mint);font-weight:700">▲ +12%</td><td>AI社員</td></tr>
-            <tr><td class="co-cell">Onboarding API</td><td class="num">稼働率 99.98%</td><td style="color:var(--mint);font-weight:700">▲ 安定</td><td>AI社員</td></tr>
-            <tr><td class="co-cell">ランディングページ</td><td class="num">登録転換率 3.2%</td><td style="color:var(--amber);font-weight:700">▼ −0.4pt</td><td>AI社員</td></tr>
+            <tr><td class="co-cell">ZeroGrid App</td><td class="num">142 weekly active users</td><td style="color:var(--mint);font-weight:700">▲ +12%</td><td>AI employee</td></tr>
+            <tr><td class="co-cell">Onboarding API</td><td class="num">99.98% uptime</td><td style="color:var(--mint);font-weight:700">▲ stable</td><td>AI employee</td></tr>
+            <tr><td class="co-cell">Landing page</td><td class="num">3.2% signup conversion</td><td style="color:var(--amber);font-weight:700">▼ −0.4pt</td><td>AI employee</td></tr>
           </tbody>
         </table>
       </div>
@@ -967,24 +967,24 @@
 
     <!-- ===== PAYMENTS ===== -->
     <div class="dash-view" id="view-payments" style="display:none">
-      <div class="view-head"><h2>支払い</h2><div class="sub">エージェント同士が条件に合意 — あなたはリンクを承認するだけ（APA）。</div></div>
+      <div class="view-head"><h2>Payments</h2><div class="sub">Agents agree the terms — you only approve the link (APA).</div></div>
       <div class="panel" style="border-color:var(--mint)">
-        <div class="panel-head"><h3>承認待ち</h3><span class="panel-tag" style="color:#0a7a4b">1件 承認待ち</span></div>
+        <div class="panel-head"><h3>Awaiting your approval</h3><span class="panel-tag" style="color:#0a7a4b">1 pending</span></div>
         <div class="pay-amount">¥480,000</div>
-        <div class="pay-from">青山テック — 初期セットアップ費用（商談 #A-102 の合意に基づく）</div>
+        <div class="pay-from">Aoyama Tech LLC — initial setup fee (per agreement in deal #A-102)</div>
         <div class="btn-row" style="justify-content:flex-start">
-          <button class="btn btn-mint btn-sm" onclick="toast('支払いリンクを開く → 承認しました（デモ）')">支払いリンクを開く</button>
-          <button class="btn btn-ghost btn-sm" onclick="toast('スキップしました（デモ）')">後で</button>
+          <button class="btn btn-mint btn-sm" onclick="toast('Payment link opened → approved (demo)')">Open payment link</button>
+          <button class="btn btn-ghost btn-sm" onclick="toast('Skipped (demo)')">Later</button>
         </div>
       </div>
       <div class="panel">
-        <div class="panel-head"><h3>履歴</h3><span class="panel-tag">直近30日</span></div>
+        <div class="panel-head"><h3>History</h3><span class="panel-tag">Last 30 days</span></div>
         <table class="tbl">
-          <thead><tr><th>日付</th><th>相手先</th><th>金額</th><th>状態</th></tr></thead>
+          <thead><tr><th>Date</th><th>Counterparty</th><th>Amount</th><th>Status</th></tr></thead>
           <tbody>
-            <tr><td class="num">6/30</td><td class="co-cell">みどり商事</td><td class="num">¥240,000</td><td><span class="stage-pill stage-close">支払済</span></td></tr>
-            <tr><td class="num">6/18</td><td class="co-cell">青山テック</td><td class="num">¥480,000</td><td><span class="stage-pill stage-close">支払済</span></td></tr>
-            <tr><td class="num">6/5</td><td class="co-cell">さくら印刷</td><td class="num">¥96,000</td><td><span class="stage-pill stage-close">支払済</span></td></tr>
+            <tr><td class="num">Jun 30</td><td class="co-cell">Midori Trading Co.</td><td class="num">¥240,000</td><td><span class="stage-pill stage-close">Paid</span></td></tr>
+            <tr><td class="num">Jun 18</td><td class="co-cell">Aoyama Tech LLC</td><td class="num">¥480,000</td><td><span class="stage-pill stage-close">Paid</span></td></tr>
+            <tr><td class="num">Jun 5</td><td class="co-cell">Sakura Printing Inc.</td><td class="num">¥96,000</td><td><span class="stage-pill stage-close">Paid</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -992,38 +992,38 @@
 
     <!-- ===== AGENT AUTOMATION ===== -->
     <div class="dash-view" id="view-automation" style="display:none">
-      <div class="view-head"><h2>自動化</h2><div class="sub">AI社員が自走で回すすべて。</div></div>
+      <div class="view-head"><h2>Agent Automation</h2><div class="sub">Everything your AI employee runs on its own.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>自動化</h3><span class="panel-tag">4件 稼働 · 1件 停止</span></div>
-        <div class="auto-row"><div class="grow"><div class="t">A2A商談ネゴシエーター</div><div class="m">他社のエージェントとLINEグループで会話 · 最終実行 6分前</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
-        <div class="auto-row"><div class="grow"><div class="t">提案書ジェネレーター</div><div class="m">あなたの書き方で資料を作成 — 結論から · 1時間前</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
-        <div class="auto-row"><div class="grow"><div class="t">APA支払いウォッチャー</div><div class="m">承認用の支払いリンクを提示 · 32分前</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
-        <div class="auto-row"><div class="grow"><div class="t">週次レポート作成</div><div class="m">毎週月曜 9:00 · 次回 7/7</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
-        <div class="auto-row"><div class="grow"><div class="t">受信箱トリアージ</div><div class="m">停止中 — 有効化するには受信箱を接続</div></div><div class="tgl off" onclick="flipTgl(this)"></div></div>
+        <div class="panel-head"><h3>Automations</h3><span class="panel-tag">4 running · 1 paused</span></div>
+        <div class="auto-row"><div class="grow"><div class="t">A2A Deal Negotiator</div><div class="m">Talks to other companies' agents in LINE groups · last run 6 min ago</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
+        <div class="auto-row"><div class="grow"><div class="t">Proposal Generator</div><div class="m">Writes decks the way you write — conclusion first · 1 hour ago</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
+        <div class="auto-row"><div class="grow"><div class="t">APA Payment Watcher</div><div class="m">Surfaces payment links for your approval · 32 min ago</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
+        <div class="auto-row"><div class="grow"><div class="t">Weekly Report Writer</div><div class="m">Every Monday 9:00 · next run Jul 7</div></div><div class="tgl" onclick="flipTgl(this)"></div></div>
+        <div class="auto-row"><div class="grow"><div class="t">Inbox Triage</div><div class="m">Paused — connect your inbox to enable</div></div><div class="tgl off" onclick="flipTgl(this)"></div></div>
       </div>
     </div>
 
     <!-- ===== TEAM DETAILS ===== -->
     <div class="dash-view" id="view-team" style="display:none">
-      <div class="view-head"><h2>チーム</h2><div class="sub">人間とAI社員が並んで。</div></div>
+      <div class="view-head"><h2>Team Details</h2><div class="sub">Humans and AI employees, side by side.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>メンバー</h3><span class="panel-tag">人間1 · AI1</span></div>
+        <div class="panel-head"><h3>Members</h3><span class="panel-tag">1 human · 1 AI</span></div>
         <div class="team-grid">
           <div class="member">
             <div class="ini">K</div>
             <div class="nm">Kotaro</div>
-            <div class="rl">CEO · 人間</div>
-            <span class="status-pill"><span class="dot"></span>確認中</span>
+            <div class="rl">CEO · Human</div>
+            <span class="status-pill"><span class="dot"></span>Reviewing</span>
           </div>
           <div class="member">
             <img id="teamAiAvatar" src="assets/avatar.png" alt="">
             <div class="nm" id="teamAiName">Haru</div>
-            <div class="rl">営業 · AI社員 · <span id="teamAiPct">80</span>% 理解</div>
-            <span class="status-pill"><span class="dot"></span>商談中</span>
+            <div class="rl">Sales · AI Employee · <span id="teamAiPct">80</span>% understood</div>
+            <span class="status-pill"><span class="dot"></span>In a deal</span>
           </div>
-          <div class="member hire" onclick="toast('デモではAI社員は1人 — でもチーム全体を想像してみて 😉')">
+          <div class="member hire" onclick="toast('One AI employee per demo — but imagine a whole team 😉')">
             <span class="plus">＋</span>
-            AI社員をもう1人雇う
+            Hire another AI employee
           </div>
         </div>
       </div>
@@ -1031,43 +1031,43 @@
 
     <!-- ===== REPORTS ===== -->
     <div class="dash-view" id="view-reports" style="display:none">
-      <div class="view-head"><h2>レポート</h2><div class="sub">成果物はここに — 会話はLINEに。</div></div>
+      <div class="view-head"><h2>Reports</h2><div class="sub">Deliverables land here — conversations stay in LINE.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>最近の成果物</h3><span class="panel-tag">今週</span></div>
-        <div class="report"><div class="ico">📕</div><div><div class="t">みどり商事 — 提案書 v3.pdf</div><div class="m">あなたの書き方で：結論から — 今日 14:02</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
-        <div class="report"><div class="ico">📄</div><div><div class="t">商談サマリ — 青山テック（7/4）</div><div class="m">合意内容と次のアクション — 昨日</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
-        <div class="report"><div class="ico">📊</div><div><div class="t">週次 営業パイプラインレポート</div><div class="m">商談3件 / 見込 ¥1,280,000 — 昨日</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
-        <div class="report"><div class="ico">🧾</div><div><div class="t">6月の入金消込</div><div class="m">入金3件 · すべて一致 — 7/1</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
-        <div class="report"><div class="ico">🗂</div><div><div class="t">理解レポート — オンボーディング</div><div class="m">雇用時 総合80% · 現在 <span id="repPct">80</span>% — 今日</div></div><span class="open" onclick="toast('プレビュー（デモ）')">開く</span></div>
+        <div class="panel-head"><h3>Recent deliverables</h3><span class="panel-tag">This week</span></div>
+        <div class="report"><div class="ico">📕</div><div><div class="t">Midori Trading — Proposal v3.pdf</div><div class="m">Written the way you write: conclusion first — today 2:02 PM</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
+        <div class="report"><div class="ico">📄</div><div><div class="t">Deal summary — Aoyama Tech (Jul 4)</div><div class="m">Agreed terms & next actions — yesterday</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
+        <div class="report"><div class="ico">📊</div><div><div class="t">Weekly sales pipeline report</div><div class="m">3 deals / ¥1,280,000 projected — yesterday</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
+        <div class="report"><div class="ico">🧾</div><div><div class="t">June payment reconciliation</div><div class="m">3 payments · all matched — Jul 1</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
+        <div class="report"><div class="ico">🗂</div><div><div class="t">Understanding report — onboarding</div><div class="m">Overall 80% at hire · now <span id="repPct">80</span>% — today</div></div><span class="open" onclick="toast('Preview (demo)')">Open</span></div>
       </div>
     </div>
 
     <!-- ===== SETTINGS ===== -->
     <div class="dash-view" id="view-settings" style="display:none">
-      <div class="view-head"><h2>設定</h2><div class="sub">あなたのAI社員、あなたのルール。</div></div>
+      <div class="view-head"><h2>Settings</h2><div class="sub">Your AI employee, your rules.</div></div>
       <div class="panel">
-        <div class="panel-head"><h3>AI社員</h3></div>
-        <div class="set-row"><div class="k">名前</div><div class="v" id="setName">Haru</div></div>
-        <div class="set-row"><div class="k">アバター</div><div class="v"><img id="setAvatar" src="assets/avatar.png" alt=""></div></div>
-        <div class="set-row"><div class="k">理解度</div><div class="v"><span id="setPct">80</span>% · <span style="color:var(--sub);font-weight:500">改善するには働き方の分析を再実行</span></div></div>
+        <div class="panel-head"><h3>AI employee</h3></div>
+        <div class="set-row"><div class="k">Name</div><div class="v" id="setName">Haru</div></div>
+        <div class="set-row"><div class="k">Avatar</div><div class="v"><img id="setAvatar" src="assets/avatar.png" alt=""></div></div>
+        <div class="set-row"><div class="k">Understanding</div><div class="v"><span id="setPct">80</span>% · <span style="color:var(--sub);font-weight:500">re-run habit analysis to improve</span></div></div>
       </div>
       <div class="panel">
-        <div class="panel-head"><h3>接続中のソース</h3></div>
-        <div class="set-row"><div class="k">学習元</div><div class="v">
-          <span class="src-pill"><span class="ok">✓</span>ローカルフォルダ</span>
-          <span class="src-pill"><span class="ok">✓</span>コードベース</span>
-          <span class="src-pill"><span class="ok">✓</span>LINEグループ</span>
-          <span class="src-pill"><span class="ok">✓</span>決済プロバイダ</span>
-          <span class="src-pill" style="color:var(--sub)">+ 受信箱を接続</span>
+        <div class="panel-head"><h3>Connected sources</h3></div>
+        <div class="set-row"><div class="k">Learning from</div><div class="v">
+          <span class="src-pill"><span class="ok">✓</span>Local folders</span>
+          <span class="src-pill"><span class="ok">✓</span>Codebase</span>
+          <span class="src-pill"><span class="ok">✓</span>LINE groups</span>
+          <span class="src-pill"><span class="ok">✓</span>Payment provider</span>
+          <span class="src-pill" style="color:var(--sub)">+ Connect inbox</span>
         </div></div>
-        <div class="set-row"><div class="k">アクション</div><div class="v">
-          <button class="btn btn-ghost btn-sm" onclick="go('welcome')">オンボーディングをやり直す</button>
-          <button class="btn btn-ghost btn-sm" onclick="location.reload()">デモをリセット</button>
+        <div class="set-row"><div class="k">Actions</div><div class="v">
+          <button class="btn btn-ghost btn-sm" onclick="go('welcome')">Re-run onboarding</button>
+          <button class="btn btn-ghost btn-sm" onclick="location.reload()">Reset demo</button>
         </div></div>
       </div>
     </div>
 
-    <footer>AtoA — デモUI / バックエンドなし · データはすべてダミー</footer>
+    <footer>AtoA — demo UI / no backend · all data is fake</footer>
     </div></main>
   </div>
 </section>
@@ -1076,7 +1076,7 @@
 
 <script>
   const $ = id => document.getElementById(id);
-  const state = { name: 'ハル', avatar: 'assets/avatar.png', pct: 80, stream: null };
+  const state = { name: 'Haru', avatar: 'assets/avatar.png', pct: 80, stream: null };
 
   function go(name) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1105,33 +1105,33 @@
 
   function flipTgl(el) {
     el.classList.toggle('off');
-    toast(el.classList.contains('off') ? '自動化を停止しました（デモ）' : '自動化を再開しました（デモ）');
+    toast(el.classList.contains('off') ? 'Automation paused (demo)' : 'Automation resumed (demo)');
   }
 
   function goConnect() {
-    state.name = $('inpName').value.trim() || 'ハル';
+    state.name = $('inpName').value.trim() || 'Haru';
     $('connectName').textContent = state.name;
     $('connectAvatar').src = state.avatar;
     go('connect');
   }
 
   const appScanLines = {
-    'Gmail': 'gmail://inbox — 4,812 スレッド（トーンと関係性）',
-    'Slack': 'slack://#sales, #general — 12,930 メッセージ',
-    'Notion': 'notion://社内Wiki — 214 ページ',
-    'GitHub': 'github://zerogrid — 1,872 コミット, 96 PR',
-    'Calendar': 'gcal://meetings — 340 予定（時間の使い方）',
-    'LINE': 'line://groups — 8 グループ（商談の会話）',
-    'Payments': 'payments://invoices — 128 取引',
+    'Gmail': 'gmail://inbox — 4,812 threads (tone & relationships)',
+    'Slack': 'slack://#sales, #general — 12,930 messages',
+    'Notion': 'notion://Company Wiki — 214 pages',
+    'GitHub': 'github://zerogrid — 1,872 commits, 96 PRs',
+    'Calendar': 'gcal://meetings — 340 events (how you spend time)',
+    'LINE': 'line://groups — 8 groups (deal conversations)',
+    'Payments': 'payments://invoices — 128 transactions',
   };
   function flipApp(el) {
     el.classList.toggle('connected');
-    el.querySelector('.st').textContent = el.classList.contains('connected') ? '接続済み ✓' : '接続';
+    el.querySelector('.st').textContent = el.classList.contains('connected') ? 'Connected ✓' : 'Connect';
     const n = document.querySelectorAll('.app-tile.connected').length;
     $('srcCount').textContent = n;
     toast(el.classList.contains('connected')
-      ? el.querySelector('.an').textContent + ' を接続しました（デモ）'
-      : el.querySelector('.an').textContent + ' を切断しました');
+      ? el.querySelector('.an').textContent + ' connected (demo)'
+      : el.querySelector('.an').textContent + ' disconnected');
   }
 
   function pickAvatar(btn) {
@@ -1162,16 +1162,16 @@
     '~/Documents/okr/2026_Q3.md',
   ];
   const scanStatuses = [
-    'ローカルフォルダを読み込み中',
-    'あなたの背景・ストーリーを学習中',
-    '会社とミッションを理解中',
-    'プロダクトとコードを学習中',
-    '顧客と関係を整理中',
-    '仕上げ中…',
+    'Reading your local folders',
+    'Learning your background and story',
+    'Understanding the company and its mission',
+    'Studying your products and codebase',
+    'Mapping your customers and relationships',
+    'Finishing up…',
   ];
 
   function startScan() {
-    state.name = $('inpName').value.trim() || 'ハル';
+    state.name = $('inpName').value.trim() || 'Haru';
     $('navName').textContent = state.name;
     $('scanAvatar').src = state.avatar;
     go('scan');
@@ -1228,20 +1228,20 @@
 
   /* ===== Habit analysis ===== */
   const insights = [
-    '📝 結論から書く',
-    '🌙 集中は夜がピーク',
-    '• 箇条書きを好む',
-    '⚡ 即断（平均12秒）',
-    '🎨 デザインはミニマル志向',
-    '🔁 同じフォルダを1日34回開く',
-    '💬 短文を高速で連投',
+    '📝 Writes conclusion-first',
+    '🌙 Focus peaks at night',
+    '• Prefers bullet points',
+    '⚡ Decides fast (avg 12s)',
+    '🎨 Leans minimal in design',
+    '🔁 Opens the same folder 34×/day',
+    '💬 Rapid-fire short messages',
   ];
 
   async function startCamera() {
     try {
       const s = await navigator.mediaDevices.getUserMedia({ video: true });
       attachStream(s);
-    } catch (e) { toast('カメラを起動できませんでした — 代わりにデモを実行してください'); }
+    } catch (e) { toast('Could not start the camera — try Run demo instead'); }
   }
   async function startScreen() {
     try {
@@ -1255,11 +1255,11 @@
       const surface = s.getVideoTracks()[0].getSettings().displaySurface;
       if (surface && surface !== 'monitor') {
         s.getTracks().forEach(t => t.stop());
-        toast('画面全体を共有してください — 作業のすべてを見るのが目的です');
+        toast('Please share your entire screen — the point is to see everything you do');
         return;
       }
       attachStream(s);
-    } catch (e) { toast('画面共有がキャンセルされました — 代わりにデモを実行してください'); }
+    } catch (e) { toast('Screen share was cancelled — try Run demo instead'); }
   }
   function attachStream(s) {
     state.stream = s;
@@ -1275,7 +1275,7 @@
     $('videoStage').classList.remove('analyzing');
   }
   function startDemoAnalysis() {
-    $('videoPlaceholder').innerHTML = '<span class="cam-ico">👀</span><span>' + state.name + ' があなたの作業を見ています…（デモ）</span>';
+    $('videoPlaceholder').innerHTML = '<span class="cam-ico">👀</span><span>' + state.name + ' is watching you work… (demo)</span>';
     startAnalysis();
   }
 
@@ -1302,7 +1302,7 @@
         clearInterval(iv);
         analysisRunning = false;
         $('btnHabitDone').style.display = 'inline-flex';
-        toast('働き方プロファイル完了 🎉 理解度 ' + pct + '%');
+        toast('Habit profile complete 🎉 Understanding at ' + pct + '%');
       }
     }, 1100);
   }
@@ -1354,13 +1354,13 @@
 
     const isSales = /sales|sell|revenue|deal|customer|営業/i.test(text);
     const script = isSales ? [
-      { delay: 1400, html: '了解。今わかっていることを確認します… 🔍 パイプライン、Q3の数字、これまでの商談会話を集めています。' },
-      { delay: 2600, html: '見つけました。<span class="hl">Q3は目標の27%</span> — でも問題は努力ではなく狙いです。<span class="hl">中堅商社との成約率は他の3倍</span>なのに、今月はその層にほとんど触れていません。' },
-      { delay: 2600, html: 'ぴったりの会社が2社：<span class="hl">川田ロジスティクス</span>と<span class="hl">星野フーズ</span>。どちらも購買エージェントを稼働中なので、<span class="hl">エージェント同士（AtoA）</span>で直接いけます — 飛び込み営業は不要。' },
-      { delay: 2200, html: 'アプローチと最初の交渉は私が担当します。相手のエージェントとの<span class="hl">LINEグループ</span>も作るので、すべての言葉を見られます。👇<br><button class="line-btn" onclick="joinLine(this)">💬 LINEグループを作成</button>' },
+      { delay: 1400, html: 'Got it. Let me check what I know… 🔍 Pulling your pipeline, Q3 numbers, and every deal conversation so far.' },
+      { delay: 2600, html: 'Found it. <span class="hl">Q3 is at 27% of target</span> — but the problem isn\'t effort, it\'s aim. Your close rate with <span class="hl">mid-size trading companies is 3× higher</span> than everything else, and you\'ve barely touched that segment this month.' },
+      { delay: 2600, html: 'Two companies fit perfectly: <span class="hl">Kawada Logistics</span> and <span class="hl">Hoshino Foods</span>. Both already run purchasing agents, so I can go <span class="hl">agent-to-agent (AtoA)</span> directly — no cold calls.' },
+      { delay: 2200, html: 'I\'ll handle the outreach and first negotiation myself. I\'ll also set up a <span class="hl">LINE group</span> with their agent so you can watch every word. 👇<br><button class="line-btn" onclick="joinLine(this)">💬 Create LINE group</button>' },
     ] : [
-      { delay: 1400, html: '了解。少し考えます… 📝' },
-      { delay: 2200, html: '考えまとまりました — あなたの働き方（<span class="hl">結論から・ミニマルなデザイン</span>）を踏まえて私が対応します。できあがったら<span class="hl">レポート</span>に載せます。判断が必要なときだけ声をかけます。' },
+      { delay: 1400, html: 'On it. Give me a moment to plan… 📝' },
+      { delay: 2200, html: 'Done thinking — I\'ll handle this myself using what I learned about how you work (<span class="hl">conclusion first, minimal design</span>). You\'ll find the result in <span class="hl">Reports</span> when it\'s ready, and I\'ll ping you if I need a decision.' },
     ];
     aiSay(script).then(() => { chatBusy = false; });
   }
@@ -1368,10 +1368,10 @@
   function joinLine(btn) {
     if (btn.classList.contains('joined')) return;
     btn.classList.add('joined');
-    btn.innerHTML = '✓ LINEグループを作成しました';
-    toast('LINEグループを作成 — あなた、' + state.name + '、相手のエージェント（デモ）');
+    btn.innerHTML = '✓ LINE group created';
+    toast('LINE group created — you, ' + state.name + ', and their agent (demo)');
     aiSay([
-      { delay: 1800, html: 'グループ<span class="hl">「AtoA × 川田ロジスティクス」</span>ができました — あなた、私、相手のエージェント。今夜こちらから会話を始め、結果を<span class="hl">概要</span>に報告します。見ていてください。😎' },
+      { delay: 1800, html: 'Group <span class="hl">"AtoA × Kawada Logistics"</span> is live — you, me, and their agent. I\'ll open the conversation tonight and report the outcome on your <span class="hl">Overview</span>. Just watch. 😎' },
     ]);
   }
 
@@ -1397,7 +1397,7 @@
     $('navPct').textContent = state.pct + '%';
     $('navBadge').style.display = 'flex';
     $('dashPct').textContent = state.pct;
-    $('dashDate').textContent = new Date().toLocaleDateString('ja-JP', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    $('dashDate').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     go('dash');
     requestAnimationFrame(() => setTimeout(() => {
       $('dashRing').style.strokeDashoffset = 195 * (1 - state.pct / 100);
@@ -1407,7 +1407,7 @@
   function approvePay() {
     $('payActions').style.display = 'none';
     $('payDone').style.display = 'flex';
-    toast('支払いリンクを開く → 承認しました（デモ）');
+    toast('Payment link opened → approved (demo)');
   }
 </script>
 </body>
