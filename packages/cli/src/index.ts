@@ -4,6 +4,7 @@ import pc from "picocolors";
 import { runScan } from "./commands/scan.js";
 import { runServe } from "./commands/serve.js";
 import { runInit } from "./commands/init.js";
+import { runPush } from "./commands/push.js";
 
 const program = new Command();
 
@@ -29,6 +30,23 @@ program
   .option("--json", "print the raw understanding JSON to stdout")
   .option("--out <dir>", "where to write the digest (default <dir>/.atoa)")
   .action((dir: string, opts: { json?: boolean; out?: string }) => runScan(dir, opts));
+
+program
+  .command("push")
+  .description("Sync the understanding digest to your AtoA dashboard (digest only, never raw files)")
+  .argument("[dir]", "directory whose digest to push", ".")
+  .option("--to <url>", "API base URL (default $ATOA_API_URL or http://localhost:3200)")
+  .option("--token <token>", "ingest token (default $ATOA_TOKEN)")
+  .option("--company <id>", "company id on the dashboard")
+  .option("--fresh", "re-scan before pushing instead of using the saved digest")
+  .action(async (dir: string, opts: { to?: string; token?: string; company?: string; fresh?: boolean }) => {
+    try {
+      await runPush(dir, opts);
+    } catch (e) {
+      process.stderr.write(pc.red(`${(e as Error).message}\n`));
+      process.exit(1);
+    }
+  });
 
 program
   .command("serve")
